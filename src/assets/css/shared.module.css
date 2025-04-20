@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, rgba(243, 146, 0, 0.3), rgba(0, 159, 226, 0.3));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+    animation: backgroundAnimation 6s infinite alternate;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+  }
+  
+  .logo img {
+    height: 60px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.8rem;
+    color: #4caf50;
+    margin-bottom: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .form input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    transition: border 0.3s ease;
+  }
+  
+  .form input:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  .form button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .form button:hover {
+    background-color: #43a047;
+  }
+  
+  .link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .link a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .link a:hover {
+    text-decoration: underline;
+  }
