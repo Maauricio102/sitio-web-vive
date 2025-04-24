@@ -1,189 +1,185 @@
 :root {
-    --primary-color: #141b34;
-    --secondary-color: #f5f5f5;
-    --background-color: #fff7eb;
-    --text-color: #555;
-    --input-border: #ccc;
-    --error-color: #e74c3c;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #141b34;
+  --secondary-color: #f5f5f5;
+  --background-color: #fff7eb;
+  --text-color: #555;
+  --input-border: #ccc;
+  --error-color: #e74c3c;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0.5rem; /* reducido para más espacio útil */
+}
+
+.logo-container {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 600px; /* ¡Más grande! */
+  margin-top: 2rem;
+}
+
+.form-container {
+  background: white;
+  padding: 2rem; /* más aire */
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* más profundidad */
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem; /* más grande */
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem; /* más grande */
+  color: var(--text-color);
+}
+
+.input-container {
+  margin: 1.2rem 0;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 1rem; /* más grande */
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: var(--error-color);
+  display: none;
+}
+
+.sign-in-btn {
+  width: 100%;
+  padding: 1rem; /* más grande */
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.7rem 0;
+}
+
+.sign-in-btn.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.sign-in-btn.alternate {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.icon-btn {
+  width: 20px;
+  margin-right: 0.5rem;
+}
+
+.spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: var(--background-color);
-    font-family: var(--font-family);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-  }
-  
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--text-color);
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--input-border);
+  border: none;
+}
+
+.note,
+.forgot-password,
+.privacy {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .logo-container {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1000;
-  }
-  
-  .logo {
-    max-width: 150px;
-  }
-  
-  
-  .logo {
-    max-width: 150px;
-  }
-  
-  .form-wrapper {
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .form-container {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title-container {
-    text-align: center;
+    position: static;
     margin-bottom: 1.5rem;
   }
-  
-  .title {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .subtitle {
-    font-size: 0.9rem;
-    color: var(--text-color);
-  }
-  
-  .input-container {
-    margin: 1rem 0;
-  }
-  
-  .input-label {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--text-color);
-    margin-bottom: 0.3rem;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 0.7rem;
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    font-size: 0.9rem;
-  }
-  
-  .input-field:focus {
-    outline: none;
-    border-color: var(--primary-color);
-  }
-  
-  .error-message {
-    font-size: 0.75rem;
-    color: var(--error-color);
-    display: none;
-  }
-  
-  .sign-in-btn {
-    width: 100%;
-    padding: 0.7rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem 0;
-  }
-  
-  .sign-in-btn.primary {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .sign-in-btn.alternate {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-  }
-  
-  .icon-btn {
-    width: 18px;
-    margin-right: 0.5rem;
-  }
-  
-  .spinner {
-    display: none;
-    width: 16px;
-    height: 16px;
-    border: 2px solid white;
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .separator {
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
-    color: var(--text-color);
-  }
-  
-  .line {
-    flex: 1;
-    height: 1px;
-    background-color: var(--input-border);
-    border: none;
-  }
-  
-  .note, .forgot-password, .privacy {
-    font-size: 0.8rem;
-    color: var(--text-color);
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
-  .link {
-    color: var(--primary-color);
-    font-weight: 600;
-    text-decoration: none;
-  }
-  
-  .link:hover {
-    text-decoration: underline;
-  }
 
-
-  /* Responsive Styles */
-
-  @media (max-width: 768px) {
-    .logo-container {
-      position: static;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-wrapper {
-      margin-top: 2rem;
-    }
+  .form-wrapper {
+    margin-top: 2rem;
   }
-  
+}
