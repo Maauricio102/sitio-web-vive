@@ -1,36 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iniciar Sesión - Clínica VIVE</title>
-  <link rel="stylesheet" href="shared.module.css" />
-  <link rel="stylesheet" href="login.module.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/shared.module.css">
 </head>
 <body>
-  <div class="background"></div>
-  <div class="container">
-    <div class="box">
-      <div class="logo">
-        <img src="./resources/imgs/logo_login.png" alt="PsicologIA Logo" />
-        <h1>Clínica VIVE</h1>
-      </div>
-      <h2>Inicia Sesión</h2>
-      <form class="form">
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" required />
-
-        <button type="submit">Entrar</button>
-
-        <p class="link">
-          ¿No tienes cuenta? <a href="register.html">Regístrate aquí</a>
-        </p>
-      </form>
-    </div>
+  <div class="logo-container">
+    <img
+      src="./resources/imgs/logo_prov.png"
+      alt="Logotipo Clínica VIVE"
+      class="logo"
+    />
   </div>
+
+  <main class="form-wrapper">
+    <form class="form-container" aria-labelledby="form-title" id="login-form">
+      <header class="title-container">
+        <h1 id="form-title" class="title">Inicia Sesión</h1>
+        <p class="subtitle">
+          Accede a tu cuenta para gestionar citas y servicios con Clínica VIVE.
+        </p>
+      </header>
+
+      <div class="input-container">
+        <label class="input-label" for="email-field">Correo Electrónico</label>
+        <input
+          placeholder="tuemail@dominio.com"
+          type="email"
+          class="input-field"
+          id="email-field"
+          aria-required="true"
+        />
+        <small class="error-message" id="email-error">Por favor, introduce un correo válido.</small>
+      </div>
+
+      <div class="input-container">
+        <label class="input-label" for="password-field">Contraseña</label>
+        <input
+          placeholder="********"
+          type="password"
+          class="input-field"
+          id="password-field"
+          aria-required="true"
+        />
+        <small class="error-message" id="password-error">La contraseña es requerida.</small>
+      </div>
+
+      <button type="submit" class="sign-in-btn primary" aria-label="Iniciar sesión">
+        <span id="login-btn-text">Iniciar Sesión</span>
+        <span class="spinner" id="login-spinner"></span>
+      </button>
+
+      <p class="forgot-password">
+        <a href="forgot-password.html" class="link">¿Olvidaste tu contraseña?</a>
+      </p>
+
+      <div class="separator" aria-hidden="true">
+        <hr class="line" />
+        <span>O</span>
+        <hr class="line" />
+      </div>
+
+      <button
+        type="button"
+        class="sign-in-btn alternate"
+        aria-label="Iniciar sesión con Google"
+      >
+        <img
+          src="./resources/icons/google-icon.svg"
+          alt="Google Icon"
+          class="icon-btn"
+        />
+        Iniciar con Google
+      </button>
+      <button
+        type="button"
+        class="sign-in-btn alternate"
+        aria-label="Iniciar sesión con Apple"
+      >
+        <img
+          src="./resources/icons/apple-icon.svg"
+          alt="Apple Icon"
+          class="icon-btn"
+        />
+        Iniciar con Apple
+      </button>
+
+      <p class="note">
+        ¿No tienes una cuenta? <a href="register.html" class="link">Regístrate aquí</a>.
+      </p>
+
+      <p class="privacy">
+        Al continuar, aceptas nuestras <a href="privacy-policy.html" class="link">Políticas de Privacidad</a>.
+      </p>
+    </form>
+  </main>
 </body>
 </html>
