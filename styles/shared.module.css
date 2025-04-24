@@ -19,53 +19,54 @@ body {
   font-family: var(--font-family);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 0.5rem; /* reducido para más espacio útil */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 1rem; /* Espaciado mínimo */
+  overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 
 .logo-container {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1000;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 200px; /* Incrementa el tamaño máximo del logo */
 }
 
 .form-wrapper {
   width: 100%;
-  max-width: 600px; /* ¡Más grande! */
-  margin-top: 2rem;
+  max-width: 700px; /* Incrementa el ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
 }
 
 .form-container {
   background: white;
-  padding: 2rem; /* más aire */
+  padding: 2rem; /* Espaciado cómodo */
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* más profundidad */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Profundidad visual */
 }
 
 .title-container {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .title {
-  font-size: 2rem; /* más grande */
+  font-size: 2rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: 1.1rem; /* más grande */
+  font-size: 1.1rem;
   color: var(--text-color);
 }
 
 .input-container {
-  margin: 1.2rem 0;
+  margin: 1rem 0;
 }
 
 .input-label {
@@ -77,7 +78,7 @@ body {
 
 .input-field {
   width: 100%;
-  padding: 1rem; /* más grande */
+  padding: 1rem;
   border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 1rem;
@@ -96,7 +97,7 @@ body {
 
 .sign-in-btn {
   width: 100%;
-  padding: 1rem; /* más grande */
+  padding: 1rem;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
@@ -111,6 +112,11 @@ body {
 .sign-in-btn.primary {
   background-color: var(--primary-color);
   color: white;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-btn.primary:hover {
+  background-color: #0f1428;
 }
 
 .sign-in-btn.alternate {
@@ -173,13 +179,55 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .logo-container {
-    position: static;
-    margin-bottom: 1.5rem;
+@media (min-width: 1024px) {
+  body {
+    padding: 2rem; /* Más espacio en pantallas grandes */
+    background: linear-gradient(to bottom, var(--background-color), #e8e8e8); /* Fondo con degradado */
   }
 
   .form-wrapper {
-    margin-top: 2rem;
+    max-width: 800px; /* Más ancho en pantallas grandes */
+  }
+
+  .form-container {
+    padding: 2.5rem; /* Más espacioso */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Más profundidad */
+  }
+
+  .title {
+    font-size: 2.2rem; /* Tamaño mayor para pantallas grandes */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    position: static;
+    margin-bottom: 1rem;
+  }
+
+  .form-wrapper {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .input-field {
+    padding: 0.8rem;
+  }
+
+  .sign-in-btn {
+    padding: 0.8rem;
   }
 }
