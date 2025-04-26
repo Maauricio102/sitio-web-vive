@@ -1,4 +1,3 @@
-
 :root {
   --primary-color: #141b34;
   --secondary-color: #f5f5f5;
@@ -21,6 +20,7 @@ body {
   font-family: var(--font-family);
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
@@ -28,24 +28,26 @@ body {
 }
 
 .logo-container {
-  position: absolute;
-  top: 5%;
-  left: 2%;
-  z-index: 100;
+  position: absolute; /* Para posicionar el logo en la esquina superior izquierda */
+  top: 2%; /* Ajusta la distancia desde la parte superior */
+  left: 2%; /* Ajusta la distancia desde el borde izquierdo */
+}
+
+.logo-link {
+  text-decoration: none; /* Quita el subrayado del enlace */
 }
 
 .logo {
-  width: max-content;
+  width: 100px; /* Tamaño del logo */
   height: auto;
   cursor: pointer;
-  transition: transform var(--transition-speed);
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
 }
 
-  .logo:hover {
-    transform: scale(1.05);
-    
-  }
-
+.logo:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+  opacity: 0.9; /* Ligera transparencia para el efecto visual */
+}
 
 .form-wrapper {
   width: 100%;
@@ -200,27 +202,16 @@ body {
   text-decoration: underline;
 }
 
-
 @media (max-width: 768px) {
-  body {
-    padding: 20px;
-  }
-
   .logo-container {
+    position: static; /* Quita la posición absoluta para centrarlo */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    justify-content: center; /* Centra el logo horizontalmente */
+    margin-bottom: 20px; /* Espacio entre el logo y los demás elementos */
   }
 
   .logo {
-    width: 75px; /* Smaller logo size for mobile devices */
-    transform: translateX(380%);
-  }
-
-  .clinic-title {
-    font-size: 2rem; /* Smaller title size for mobile devices */
-    margin-top: 10px;
+    width: 75px; /* Tamaño reducido del logo en móviles */
   }
 
   .form-wrapper {
