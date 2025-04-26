@@ -32,19 +32,30 @@
           class="input-field"
           id="email-field"
           aria-required="true"
+          autocomplete="email"
         />
         <small class="error-message" id="email-error">Por favor, introduce un correo válido.</small>
       </div>
 
       <div class="input-container">
         <label class="input-label" for="password-field">Contraseña</label>
-        <input
-          placeholder="********"
-          type="password"
-          class="input-field"
-          id="password-field"
-          aria-required="true"
-        />
+        <div class="password-wrapper">
+          <input
+            placeholder="********"
+            type="password"
+            class="input-field"
+            id="password-field"
+            aria-required="true"
+            autocomplete="current-password"
+          />
+          <button
+            type="button"
+            class="toggle-password"
+            aria-label="Mostrar u ocultar contraseña"
+          >
+              
+          </button>
+        </div>
         <small class="error-message" id="password-error">La contraseña es requerida.</small>
       </div>
 
@@ -63,31 +74,6 @@
         <hr class="line" />
       </div>
 
-      <button
-        type="button"
-        class="sign-in-btn alternate"
-        aria-label="Iniciar sesión con Google"
-      >
-        <img
-          src="./resources/icons/google-icon.svg"
-          alt="Google Icon"
-          class="icon-btn"
-        />
-        Iniciar con Google
-      </button>
-      <button
-        type="button"
-        class="sign-in-btn alternate"
-        aria-label="Iniciar sesión con Apple"
-      >
-        <img
-          src="./resources/icons/apple-icon.svg"
-          alt="Apple Icon"
-          class="icon-btn"
-        />
-        Iniciar con Apple
-      </button>
-
       <p class="note">
         ¿No tienes una cuenta? <a href="register.html" class="link">Regístrate aquí</a>.
       </p>
@@ -97,5 +83,6 @@
       </p>
     </form>
   </main>
+  <script src="./scripts/login.js"></script>
 </body>
 </html>
